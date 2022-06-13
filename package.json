@@ -1,0 +1,85 @@
+{
+  "name": "ourcode",
+  "displayName": "Our Code",
+  "description": "Simply Annoy Other Coders",
+  "version": "1.0.1",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "license": "MIT",
+  "publisher": "IvanDwane",
+  "author": {
+    "name": "Ivan Dwane",
+    "email": "contact@ivandwane.dev"
+  },
+  "homepage": "https://github.com/dwaneivan/vscode-our-code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwaneivan/vscode-our-code"
+  },
+  "bugs": {
+    "url": "https://github.com/dwaneivan/vscode-our-code/issues"
+  },
+  "icon": "assets/icon.jpg",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "Fun",
+    "Prank"
+  ],
+  "activationEvents": [
+    "onCommand:ourcode.space",
+    "onCommand:ourcode.semicolon",
+    "onCommand:ourcode.spacemayhem",
+    "onCommand:ourcode.semicolonmayhem"
+  ],
+  "browser": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ourcode.space",
+        "title": "Our Code: Space"
+      },
+      {
+        "command": "ourcode.semicolon",
+        "title": "Our Code: Semicolon"
+      },
+      {
+        "command": "ourcode.spacemayhem",
+        "title": "Our Code: Space Mayhem"
+      },
+      {
+        "command": "ourcode.semicolonmayhem",
+        "title": "Our Code: Semicolon Mayhem"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.67.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.2",
+    "ts-loader": "^9.3.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "@vscode/test-electron": "^2.1.3"
+  }
+}
